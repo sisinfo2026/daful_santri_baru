@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Daftar Ulang - Pondok Pesantren Dzunnuroin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 100%;
+            padding: 40px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .year {
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .links-container {
+            margin-top: 30px;
+        }
+
+        .link-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .link-card a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .link-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .link-text {
+            flex-grow: 1;
+        }
+
+        .link-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .link-desc {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .arrow {
+            color: #667eea;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .link-card:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .info-box {
+            background: #e0f2fe;
+            border-left: 4px solid #0284c7;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #075985;
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #075985;
+        }
+
+        .success-box {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #065f46;
+        }
+
+        .success-box strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #065f46;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .link-title {
+                font-size: 16px;
+            }
+
+            .link-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="https://ik.imagekit.io/xv5axj5i9/logo-dn.png?updatedAt=1762656537375" alt="Logo Dzunnuroin">
+            </div>
+            <span class="status-badge">DAFTAR ULANG SANTRI BARU</span>
+            <h1>Proses Daftar Ulang</h1>
+            <p class="subtitle">Pondok Pesantren Dzunnuroin</p>
+            <p class="subtitle">Jenjang <strong>Wustha</strong></p>
+            <p class="year">TA. 2026-2027</p>
+        </div>
+
+        <div class="success-box">
+            <strong>🎉 Selamat! Anda diterima sebagai Santri Baru</strong>
+            Silakan lengkapi proses daftar ulang di bawah ini untuk menyelesaikan pendaftaran Anda.
+        </div>
+
+        <div class="links-container">
+            <!-- Link 1: Form Pemesanan Perlengkapan -->
+            <div class="link-card">
+                <a href="#" target="_blank">
+                    <div class="link-icon">🛒</div>
+                    <div class="link-text">
+                        <div class="link-title">Form Pemesanan Perlengkapan</div>
+                        <div class="link-desc">Pesan seragam, perlengkapan pondok, dan kebutuhan santri</div>
+                    </div>
+                    <div class="arrow">→</div>
+                </a>
+            </div>
+
+            <!-- Link 2: Form Daftar Ulang -->
+            <div class="link-card">
+                <a href="#" target="_blank">
+                    <div class="link-icon">📋</div>
+                    <div class="link-text">
+                        <div class="link-title">Form Daftar Ulang</div>
+                        <div class="link-desc">Konfirmasi kehadiran dan lengkapi data administrasi</div>
+                    </div>
+                    <div class="arrow">→</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>ℹ️ Informasi Penting:</strong>
+            • Pastikan kedua form diisi dengan lengkap dan benar<br>
+            • Pemesanan perlengkapan dapat disesuaikan dengan kebutuhan<br>
+            • Form daftar ulang wajib diisi sebagai konfirmasi kehadiran<br>
+            • Hubungi panitia jika mengalami kendala pengisian
+        </div>
+
+        <div class="footer">
+            <p><strong>Proses Daftar Ulang PSB</strong></p>
+            <p style="margin-top: 5px;">Barakallahu fiikum</p>
+        </div>
+    </div>
+</body>
+</html>
